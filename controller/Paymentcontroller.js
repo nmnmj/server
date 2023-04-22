@@ -32,8 +32,8 @@ class Paymentcontroller{
                 razorpay_signature
             })
             let r = await doc.save()
-
-            res.redirect(`http://localhost:3000/success?reference=${razorpay_payment_id}`)
+            res.status(200).json({"Reference No.:- ":razorpay_payment_id})
+            // res.redirect(`http://localhost:3000/success?reference=${razorpay_payment_id}`)
 
 
         }
