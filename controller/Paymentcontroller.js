@@ -26,12 +26,12 @@ class Paymentcontroller{
                                         // console.log("sig received " ,razorpay_signature);
                                         // console.log("sig generatd " ,expectedSignature);
         if(razorpay_signature===expectedSignature){
-            let doc = await orderModel.create({
-                razorpay_order_id, 
-                razorpay_payment_id,
-                razorpay_signature
-            })
-            let r = await doc.save()
+            // let doc = await orderModel.create({
+            //     razorpay_order_id, 
+            //     razorpay_payment_id,
+            //     razorpay_signature
+            // })
+            // let r = await doc.save()
             res.status(200).json({"Reference No.:- ":razorpay_payment_id})
             // res.redirect(`http://localhost:3000/success?reference=${razorpay_payment_id}`)
 
