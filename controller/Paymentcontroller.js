@@ -10,7 +10,7 @@ class Paymentcontroller{
           };
         const order = await instance.orders.create(options)
 
-        console.log(order)
+        // console.log(order)
         res.status(200).send(order)
     }
 
@@ -23,8 +23,8 @@ class Paymentcontroller{
         var expectedSignature = crypto.createHmac('sha256', process.env.RZ_SECRET_KEY)
                                         .update(body.toString())
                                         .digest('hex');
-                                        console.log("sig received " ,razorpay_signature);
-                                        console.log("sig generatd " ,expectedSignature);
+                                        // console.log("sig received " ,razorpay_signature);
+                                        // console.log("sig generatd " ,expectedSignature);
         if(razorpay_signature===expectedSignature){
             let doc = await orderModel.create({
                 razorpay_order_id, 
